@@ -32,14 +32,14 @@
         android:icon="@drawable/app_notes"
         android:label="@string/app_name" >
         <provider
-            android:name="com.example.android.notepad.NotePadProvider"
+            android:name="com.example.android.notepad.datasource.NotePadProvider"
             android:authorities="com.google.provider.NotePad"
             android:exported="false" >
             <grant-uri-permission android:pathPattern=".*" />
         </provider>
 
         <activity
-            android:name="com.example.android.notepad.NotesList"
+            android:name="com.example.android.notepad.activity.NotesList"
             android:label="@string/title_notes_list" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,7 +64,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.android.notepad.NoteEditor"
+            android:name="com.example.android.notepad.activity.NoteEditor"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="sensor"
             android:theme="@android:style/Theme.Holo.Light" >
@@ -99,7 +99,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.android.notepad.TitleEditor"
+            android:name="com.example.android.notepad.activity.TitleEditor"
             android:icon="@drawable/ic_menu_edit"
             android:label="@string/title_edit_title"
             android:theme="@android:style/Theme.Holo.Dialog"
@@ -136,7 +136,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.android.notepad.NotesLiveFolder"
+            android:name="com.example.android.notepad.activity.NotesLiveFolder"
             android:icon="@drawable/live_folder_notes"
             android:label="@string/live_folder_name" >
             <intent-filter>

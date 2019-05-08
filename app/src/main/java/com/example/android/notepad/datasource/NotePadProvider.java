@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.notepad;
-
-import com.example.android.notepad.NotePad;
+package com.example.android.notepad.datasource;
 
 import android.content.ClipDescription;
 import android.content.ContentProvider;

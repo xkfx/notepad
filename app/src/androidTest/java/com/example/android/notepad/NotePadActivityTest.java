@@ -17,7 +17,7 @@
 package com.example.android.notepad;
 
 import android.test.ActivityInstrumentationTestCase2;
-import com.example.android.notepad.NotesList;
+import com.example.android.notepad.activity.NotesList;
 
 /**
  * Make sure that the main launcher activity opens up properly, which will be

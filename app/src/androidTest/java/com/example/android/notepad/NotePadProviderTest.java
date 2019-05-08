@@ -26,6 +26,9 @@ import android.os.ParcelFileDescriptor;
 import android.test.ProviderTestCase2;
 import android.test.mock.MockContentResolver;
 
+import com.example.android.notepad.datasource.NotePad;
+import com.example.android.notepad.datasource.NotePadProvider;
+
 import java.io.BufferedReader;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;

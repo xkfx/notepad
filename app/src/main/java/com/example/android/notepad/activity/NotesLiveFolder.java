@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.android.notepad;
+package com.example.android.notepad.activity;
 
-import com.example.android.notepad.NotePad;
+import com.example.android.notepad.R;
+import com.example.android.notepad.datasource.NotePad;
 
 import android.app.Activity;
 import android.content.Intent;

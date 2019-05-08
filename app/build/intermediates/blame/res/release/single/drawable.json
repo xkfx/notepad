@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ic_menu_save.png",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\drawable\\ic_menu_save.png"
+    },
+    {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ic_menu_compose.png",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\drawable\\ic_menu_compose.png"
+    },
+    {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\release\\drawable\\live_folder_notes.png",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\drawable\\live_folder_notes.png"
+    },
+    {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ic_menu_delete.png",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\drawable\\ic_menu_delete.png"
+    },
+    {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ic_menu_edit.png",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\drawable\\ic_menu_edit.png"
+    },
+    {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ic_menu_revert.png",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\drawable\\ic_menu_revert.png"
+    },
+    {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\release\\drawable\\app_notes.png",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\drawable\\app_notes.png"
+    }
+]

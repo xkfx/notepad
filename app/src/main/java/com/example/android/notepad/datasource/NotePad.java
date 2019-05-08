@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.notepad;
+package com.example.android.notepad.datasource;
 
 import android.net.Uri;
 import android.provider.BaseColumns;

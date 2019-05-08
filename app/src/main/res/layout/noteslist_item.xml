@@ -13,13 +13,29 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/text1"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:gravity="center_vertical"
-    android:paddingLeft="5dip"
-    android:singleLine="true"
-/>
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="10dp">
+
+    <TextView
+    android:text="Title"
+    android:id="@android:id/text1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@android:color/white"
+    android:textSize="16sp"
+    tools:ignore="HardcodedText" />
+
+<TextView
+    android:text="Sub Title"
+    android:id="@+id/listItem_sub_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@android:color/darker_gray"
+    android:textSize="13sp"
+    tools:ignore="HardcodedText" />
+
+</LinearLayout>

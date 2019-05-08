@@ -4,12 +4,20 @@
         "source": "D:\\Projects2others\\NotePad-master\\app\\src\\main\\res\\layout\\title_editor.xml"
     },
     {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\debug\\layout\\noteslist_item.xml",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\layout\\noteslist_item.xml"
+    },
+    {
         "merged": "D:\\Projects2others\\NotePad-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\noteslist_item.xml",
         "source": "D:\\Projects2others\\NotePad-master\\app\\src\\main\\res\\layout\\noteslist_item.xml"
     },
     {
         "merged": "D:\\Projects2others\\NotePad-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\note_editor.xml",
         "source": "D:\\Projects2others\\NotePad-master\\app\\src\\main\\res\\layout\\note_editor.xml"
+    },
+    {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\debug\\layout\\note_editor.xml",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\layout\\note_editor.xml"
     },
     {
         "merged": "E:\\gitrepos\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\layout\\title_editor.xml",
@@ -22,5 +30,9 @@
     {
         "merged": "E:\\gitrepos\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\layout\\note_editor.xml",
         "source": "E:\\gitrepos\\NotePad\\app\\src\\main\\res\\layout\\note_editor.xml"
+    },
+    {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\debug\\layout\\title_editor.xml",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\layout\\title_editor.xml"
     }
 ]
