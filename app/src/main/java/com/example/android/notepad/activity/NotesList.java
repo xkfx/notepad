@@ -35,6 +35,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -81,6 +82,8 @@ public class NotesList extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // 用自定义布局取代默认的单一布局（整个布局填充一个listView），目的是添加“搜索栏”
+        setContentView(R.layout.notelist_listview);
 
         // The user does not need to hold down the key to use menu shortcuts.
         setDefaultKeyMode(DEFAULT_KEYS_SHORTCUT);
@@ -131,30 +134,12 @@ public class NotesList extends ListActivity {
          * value will appear in the ListView.
          */
 
-//        ArrayList<HashMap<String, Object>> hashMaps = null;
-//        if (cursor.moveToFirst()) {
-//            hashMaps = new ArrayList<>();
-//            do {
-//                String title = cursor.getString(1);
-//                String modified = DateUtil.timeMillis2Date(cursor.getLong(2));
-//
-//                HashMap<String, Object> hashMap = new HashMap<>();
-//                hashMap.put(NotePad.Notes.COLUMN_NAME_TITLE, title);
-//                hashMap.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, modified);
-//                hashMaps.add(hashMap);
-//            } while (cursor.moveToNext());
-//        }
-
         // The names of the cursor columns to display in the view, initialized to the title column
         String[] dataColumns = {NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE};
 
         // The view IDs that will display the cursor columns, initialized to the TextView in
         // noteslist_item.xml
         int[] viewIDs = {android.R.id.text1, R.id.listItem_sub_title};
-
-        // 尝试改用SimpleAdapter后无法正常编辑笔记，点击某个笔记立即闪退
-//        SimpleAdapter simpleAdapter = new SimpleAdapter(this,
-//                hashMaps, R.layout.noteslist_item, dataColumns, viewIDs);
 
         // Creates the backing adapter for the ListView.
         SimpleCursorAdapter adapter
@@ -180,8 +165,53 @@ public class NotesList extends ListActivity {
             }
         });
 
+        // 设置搜索栏组件，搜索栏组件可支配、改变适配器，
+        // 一个极为重要的一点是，视图将随着适配器中cursor的变化而同步改变。
+        initializeSearchView(adapter);
+
         // Sets the ListView's adapter to be the cursor adapter that was just created.
         setListAdapter(adapter);
+    }
+
+
+    /**
+     * 这是一个自定义的方法，用于封装
+     * 初始化搜索组件的相关代码。
+     */
+    private void initializeSearchView(final SimpleCursorAdapter adapter) {
+        SearchView searchView = (SearchView) findViewById(R.id.search_notes);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                Toast.makeText(getApplicationContext(), newText, Toast.LENGTH_LONG).show();
+                Cursor newCursor;
+                if (newText != null && !newText.trim().isEmpty()) {
+                    String selection = NotePad.Notes.COLUMN_NAME_TITLE + " GLOB '*" + newText + "*'"; //query selection condition
+                    newCursor = getContentResolver().query(
+                            getIntent().getData(),
+                            PROJECTION,
+                            selection,
+                            null,
+                            NotePad.Notes.DEFAULT_SORT_ORDER
+                    );
+                } else {
+                    newCursor = getContentResolver().query(
+                            getIntent().getData(),
+                            PROJECTION,
+                            null,
+                            null,
+                            NotePad.Notes.DEFAULT_SORT_ORDER
+                    );
+                }
+                adapter.swapCursor(newCursor); // 视图将同步更新！
+                return true;
+            }
+        });
     }
 
     /**

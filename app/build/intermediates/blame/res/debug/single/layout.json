@@ -8,6 +8,10 @@
         "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\layout\\noteslist_item.xml"
     },
     {
+        "merged": "D:\\project_android\\notepad\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notelist_listview.xml",
+        "source": "D:\\project_android\\notepad\\app\\src\\main\\res\\layout\\notelist_listview.xml"
+    },
+    {
         "merged": "D:\\Projects2others\\NotePad-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\noteslist_item.xml",
         "source": "D:\\Projects2others\\NotePad-master\\app\\src\\main\\res\\layout\\noteslist_item.xml"
     },
