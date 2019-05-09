@@ -16,6 +16,7 @@
 
 package com.example.android.notepad.activity;
 
+import android.annotation.TargetApi;
 import android.app.ListActivity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -25,6 +26,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -38,7 +40,6 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.android.notepad.R;
 import com.example.android.notepad.datasource.NotePad;
@@ -178,6 +179,7 @@ public class NotesList extends ListActivity {
      * 这是一个自定义的方法，用于封装
      * 初始化搜索组件的相关代码。
      */
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     private void initializeSearchView(final SimpleCursorAdapter adapter) {
         SearchView searchView = (SearchView) findViewById(R.id.search_notes);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -188,7 +190,6 @@ public class NotesList extends ListActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                Toast.makeText(getApplicationContext(), newText, Toast.LENGTH_LONG).show();
                 Cursor newCursor;
                 // Copy from smartflowers↓
                 if (newText != null && !newText.trim().isEmpty()) {

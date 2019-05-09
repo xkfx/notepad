@@ -540,7 +540,7 @@ public class NoteEditor extends Activity {
         if (mState == STATE_INSERT) {
 
             // If no title was provided as an argument, create one from the note text.
-            if (title == null) {
+            if (title == null || title.length() > 30) { // title.length() > 30是后面加的，用于统一标题风格
 
                 // Get the note's length
                 int length = text.length();
@@ -557,6 +557,7 @@ public class NoteEditor extends Activity {
                         title = title.substring(0, lastSpace);
                     }
                 }
+
             }
             // In the values map, sets the value of the title
             values.put(NotePad.Notes.COLUMN_NAME_TITLE, title);

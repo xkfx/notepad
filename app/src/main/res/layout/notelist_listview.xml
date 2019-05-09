@@ -17,15 +17,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#00FF00"
+        android:background="@android:color/black"
         android:drawSelectorOnTop="false" />
 
     <TextView
         android:id="@android:id/empty"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#FF0000"
-        android:text="No data" />
+        android:background="#0A0000"
+        android:text="无搜索结果" />
 </LinearLayout>
  
