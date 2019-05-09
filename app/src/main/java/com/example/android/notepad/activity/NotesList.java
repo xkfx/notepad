@@ -190,8 +190,9 @@ public class NotesList extends ListActivity {
             public boolean onQueryTextChange(String newText) {
                 Toast.makeText(getApplicationContext(), newText, Toast.LENGTH_LONG).show();
                 Cursor newCursor;
+                // Copy from smartflowers↓
                 if (newText != null && !newText.trim().isEmpty()) {
-                    String selection = NotePad.Notes.COLUMN_NAME_TITLE + " GLOB '*" + newText + "*'"; //query selection condition
+                    String selection = NotePad.Notes.COLUMN_NAME_TITLE + " GLOB '*" + newText + "*'";
                     newCursor = getContentResolver().query(
                             getIntent().getData(),
                             PROJECTION,
