@@ -12,11 +12,11 @@
 
 ## 二、实现思路
 
-在原始项目中，NotesList类继承自ListActivity。而ListActivity有一个默认的布局，该布局仅含一个占满全屏的ListView组件。因此，首先需要改写这个默认布局，以便添加“搜索框组件”。改写的方式可参考：https://developer.android.com/reference/android/app/ListActivity，这里不做赘述。
+在原始项目中，NotesList类继承自ListActivity。而ListActivity有一个默认的布局，该布局仅含一个占满全屏的ListView组件。因此，首先需要改写这个默认布局，以便添加“搜索框组件”。改写的方式可参考[官方文档](https://developer.android.com/reference/android/app/ListActivity)，这里不做赘述。
 
 
 
-添加完“搜索框组件”后，对该组件添加相应的事件监听，并实现相应的处理方法，即可实现笔记内容的搜索功能：
+添加完“搜索框组件”后，对该组件添加相应的事件监听，并实现相应的处理方法，即可实现笔记内容的“实时”搜索功能：
 
 ```java
 /**
@@ -61,5 +61,5 @@ private void initializeSearchView(final SimpleCursorAdapter adapter) {
 }
 ```
 
-一个极为重要的一点是，视图将随着适配器中cursor的变化而同步改变。
+一个极为重要的一点是，视图总是随着适配器中cursor的变化而同步改变。
 
