@@ -67,7 +67,7 @@ public class NotesList extends ListActivity {
     private static final String[] PROJECTION = new String[]{
             NotePad.Notes._ID, // 0
             NotePad.Notes.COLUMN_NAME_TITLE, // 1
-            NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 2
+            NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 2 ---新加的映射字段
             // 例如，从cursor中取某条记录的modified字段值时，调用cursor.getLong(2)即可
     };
 
@@ -100,11 +100,8 @@ public class NotesList extends ListActivity {
         // accesses a list of notes.
         if (intent.getData() == null) {
             intent.setData(NotePad.Notes.CONTENT_URI);
-
-            Log.d(TAG, "[NotesList onCreate, when intent.getData() == null]\n" + NotePad.Notes.CONTENT_URI.toString());
+            // Log.d(TAG, "[NotesList onCreate, when intent.getData() == null]\n" + NotePad.Notes.CONTENT_URI.toString());
             // 输出样例：：content://com.google.provider.NotePad/notes
-        } else {
-            Log.d(TAG, "[**NotesList onCreate, when intent.getData() != null]\n" + NotePad.Notes.CONTENT_URI.toString());
         }
 
         /*
