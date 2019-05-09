@@ -34,11 +34,9 @@ String[] dataColumns = {NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NA
 int[] viewIDs = {android.R.id.text1, R.id.listItem_sub_title};
 ```
 
-即可。
 
 
-
-另外一个须注意的是，modified字段所保存的是一个Long型的“以毫秒数”保存的时间，在查出modified字段值后应转化为一般时间格式。简单设置一下SimpleCursorAdapter就行了：
+须注意的是，modified字段所保存的是一个Long型的“以毫秒数”保存的时间，在查出modified字段值后还应转化为一般时间格式。简单设置一下SimpleCursorAdapter就行了：
 
 ```java
 // 将日期字段由timeMillis格式化为yyyy/MM/dd HH:mm
